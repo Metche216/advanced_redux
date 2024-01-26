@@ -35,6 +35,20 @@ const cartSlice = createSlice({
 
       state.items[existingCartItemIndex].quantity += 1;
     },
+    decrementCartItem(state, action) {
+      const existingCartItemIndex = state.items.findIndex(
+        (item) => item.title === action.payload
+      );
+
+      if (existingCartItemIndex >= 0) {
+        const selectedItem = state.items[existingCartItemIndex];
+        if (selectedItem.quantity > 1) {
+          state.items[existingCartItemIndex].quantity -= 1;
+        } else {
+          state.items.splice(existingCartItemIndex,1)
+        }
+      }
+    },
   },
 });
 
