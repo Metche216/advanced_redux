@@ -1,0 +1,5 @@
+
+add to cart . adds product to the cart
+if it is part of the cart it increases quantity by 1
+add more dummy products
+in the cart + and - control quantity 
